@@ -33,7 +33,7 @@ async function selectEmployees() {
 
 async function insertEmployee(employee) {
     const client = await connect(); 
-    const sql = "INSERT INTO funcionarios(nome, cargo, salario) VALUE ($1, $2, $3)";   
+    const sql = "INSERT INTO funcionarios(nome, cargo, salario) VALUES ($1, $2, $3)";   
     const values = [employee.name, employee.cargo, employee.salario];
     await client.query(sql, values);
     
